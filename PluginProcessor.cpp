@@ -204,7 +204,7 @@ void DistortionAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, j
             
             *channelData *= drive * range;
             
-            //distortion via atan //HOW CAN WE USE DIFFERENT DISTORTIONS IN THE SAME PLUG-IN?
+            //distortion via atan 
             *channelData = ((((2.f / juce::float_Pi) * atan(*channelData)) * blend) + (cleanData * 1.f-blend)) * volume;
             
             channelData++;
@@ -212,7 +212,6 @@ void DistortionAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, j
     }
 }
 
-//THIS WAS MISSING!!!
 juce::AudioProcessorValueTreeState& DistortionAudioProcessor::getValueTreeState()
 {
     return mState;
